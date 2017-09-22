@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Tu ubicación</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+	<section class="container">
+		<div class="row">
+			<h1 class="center">Tú ubicación</h1>
+		</div>
+		<div class="row">
+			<div class="col s6">
+				<div class="row">
+					<div class="col s10 offset-s1">
+						<button class="waves-effect waves-light btn modal-trigger" href="#modal1">
+							<i class="material-icons left">
+							edit_location</i>Ingresa tus coordenadas
+						</button>
+					</div>
+				</div>
+				<div id="modal1" class="modal">
+					<div class="modal-content">
+						<div class="row">
+							<form class="col s12">
+								<div class="row">
+									<div class="input-field col s6">
+										<i class="material-icons prefix">location_on</i>
+										<input id="latitud" type="text" class="validate numeros" maxlength="15">
+										<label for="latitud">Latitud</label>
+									</div>
+									<div class="input-field col s6">
+										<i class="material-icons prefix">location_on</i>
+										<input id="longitud" type="text" class="validate numeros" maxlength="15">
+										<label for="longitud">Longitud -</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="modal-action modal-close waves-effect waves-green btn-flat" id="mostrarLugarFavorito">
+							Mostrar
+						</button>
+					</div>
+				</div>
+				<div class="row">
+					<!-- Este es el div que mostrara nuestro mapa,
+						importante ponerles un tamaño -->
+					<div id="mapa" class="col-12 imagen-mapa">
+					</div>
+
+				</div>
+			</div>
+			<div class="col s6">
+				<div class="row">
+					<div class="col s8 offset-s2">
+						<button id="btn-ubicacion-actual" class="waves-effect waves-light btn">
+							<i class="material-icons left">
+							location_on</i>Ubicación actual
+						</button>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div id="mapa-ubicacion-actual" class="col-12 imagen-mapa">
+					</div>
+				</div>
+				<div class="row">
+					<div id="btnRuta" class="col s8 offset-s2">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMQLmyXkvvdE9UCtLkJwcenh8_tcuNnzk"> </script>
+	<!--
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb4XMDTvfDKBocqRUjGB8lx8m3e4v5qLA">
+    </script>
+     -->
+	<script src="./js/gmaps.js"></script>
+	<script src="./js/app-dos.js"></script>
+</body>
+</html>
